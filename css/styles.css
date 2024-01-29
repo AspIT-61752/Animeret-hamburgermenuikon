@@ -1,0 +1,116 @@
+:root {
+  /* Variables for the hamburger menu. */
+  --hamburger-bar-width: 84px;
+  --hamburger-bar-height: 12px;
+  /* Might not use this. */
+  --hamburger-bar-spacing: 4px;
+  --hamburger-bar-color: #eeeeee;
+  /* --hamburger-bar-color: #383838; */
+  --hamburger-bar-border-radius: 1em;
+  --hamburger-bar-margin-height: 1.4em;
+
+  /* Transition properties. */
+  --hamburger-bar-transition-duration: 0.3s;
+  --hamburger-bar-transition-timing-function: ease-in-out;
+  --hamburger-bar-transition-delay: 0s;
+
+  --background-color: #383838;
+  /* --background-color: #eeeeee; */
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: var(--background-color);
+
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* How the bars should look. */
+.burger-bar {
+  width: var(--hamburger-bar-width);
+  height: var(--hamburger-bar-height);
+  background-color: var(--hamburger-bar-color);
+  border-radius: var(--hamburger-bar-border-radius);
+
+  /* Centers the bars to the middle of the element (div). */
+  margin: calc(var(--hambuger-bar-margin-height) / 2) 0;
+}
+
+/* The container for the bars. */
+.hamburger-menu {
+  /* margin: 2em auto; */
+  width: var(--hamburger-bar-width);
+  height: var(--hamburger-bar-width);
+
+  border: red solid 1px;
+
+  /* Might not need this. */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hamburger-menu:hover {
+  cursor: pointer;
+}
+
+/* Hamburger menu one. */
+
+/* Styles for the container. */
+.menu-1 {
+  /* TODO: Add something. */
+}
+
+/* Applies to all the bars. */
+.menu-1 > div {
+  transition: all var(--hamburger-bar-transition-duration);
+  border: rgb(39, 171, 194) solid 1px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .menu-1 div:nth-child(1) {
+  transform-origin: top right;
+}
+
+.menu-1 div:nth-child(3) {
+  transform-origin: bottom right;
+} */
+
+/* c = sqrt(a2+b2) */
+/* The bars. */
+.menu-1:hover div:nth-child(1) {
+  transform-origin: top right;
+  transform: rotate(-45deg);
+
+  /* TODO: Caldulate this. Maybe use a piece of paper to visualize it. */
+  width: calc(
+    sqrt(
+      (var(--hamburger-bar-width) * 2) +
+        (var(--hamburger-bar-margin-height + --hamburger-bar-height) * 2)
+    )
+  );
+}
+
+.menu-1:hover div:nth-child(2) {
+  transform-origin: center;
+  transform: translateX(calc(-13vw - var(--hamburger-bar-width)));
+}
+
+.menu-1:hover div:nth-child(3) {
+  transform-origin: bottom right;
+  rotate: 45deg;
+}
